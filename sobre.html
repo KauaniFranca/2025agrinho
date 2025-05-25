@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Educação Rural</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #fdfdfd;
+      color: #333;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+
+    .navbar {
+      background-color: #2d4b3c;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 10%;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: url('https://via.placeholder.com/1200x400.png?text=Campo+e+Cidade') no-repeat center;
+      background-size: cover;
+      color: rgb(35, 100, 6);
+      padding: 100px 10%;
+      text-align: left;
+    }
+
+    .hero-content h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background-color: #60a660;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .benefits {
+      padding: 60px 10%;
+      background-color: #f1f9f2;
+      text-align: center;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      width: 300px;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .card h3 {
+      padding: 15px;
+      font-size: 1.2em;
+    }
+
+    .card p {
+      padding: 0 15px 15px;
+    }
+
+    .flashcard-section {
+      padding: 60px 10%;
+      background: #fff;
+      text-align: center;
+    }
+
+    .flashcards {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .flashcard {
+      width: 200px;
+      height: 120px;
+      perspective: 1000px;
+      position: relative;
+    }
+
+    .flashcard .front,
+    .flashcard .back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: #60a660;
+      color: rgb(255, 255, 255);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      border-radius: 8px;
+      backface-visibility: hidden;
+      transition: transform 0.6s ease-in-out;
+      padding: 10px;
+    }
+
+    .flashcard .back {
+      background: #36584c;
+      transform: rotateY(180deg);
+    }
+
+    .flashcard:hover .front {
+      transform: rotateY(180deg);
+    }
+
+    .flashcard:hover .back {
+      transform: rotateY(360deg);
+    }
+
+    footer {
+      background: #2d4b3c;
+      color: white;
+      text-align: center;
+      padding: 20px 10%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="leaf-logo" onclick="startLeafRain()" style="position: fixed; top: 15px; left: 15px; font-size: 2rem; cursor: pointer;">🌱</div> 
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="" alt="">
+    </div>
+    <ul class="nav-links">
+      <li><a href="#beneficios">Benefícios</a></li>
+      <li><a href="#flashcards">Curiosidades</a></li>
+      
+   <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Educação Rural e Desenvolvimento Local</h1>
+      <p>Descubra como a educação no campo transforma comunidades e fortalece o futuro.</p>
+      <a href="#beneficios" class="btn">Saiba Mais</a>
+    </div>
+  </section>
+
+  <section class="benefits" id="beneficios">
+    <h2>6 Benefícios da Educação Rural</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="7.jpeg" alt="Acesso ao Conhecimento">
+        <h3>Acesso ao Conhecimento</h3>
+        <p>Levar educação de qualidade ao campo empodera famílias e fortalece a cidadania.</p>
+      </div>
+      <div class="card">
+        <img src="4.jpeg" alt="Formação Técnica">
+        <h3>Formação Técnica</h3>
+        <p>Cursos e capacitações voltados à realidade rural geram novas oportunidades.</p>
+      </div>
+      <div class="card">
+        <img src="8.jpeg" alt="Jovens no Campo">
+        <h3>Fixação dos Jovens</h3>
+        <p>Educação de qualidade ajuda a manter os jovens no campo com futuro promissor.</p>
+      </div>
+      <div class="card">
+        <img src="6.jpeg" alt="Inovação Rural">
+        <h3>Inovação no Campo</h3>
+        <p>Conhecimento promove práticas sustentáveis e uso consciente dos recursos.</p>
+      </div>
+      <div class="card">
+        <img src="3.jpeg" alt="Comunidade Forte">
+        <h3>Fortalecimento Comunitário</h3>
+        <p>A escola rural é um centro de encontro, cultura e transformação local.</p>
+      </div>
+    </div>
+    
+  </section>
+
+  <section class="flashcard-section" id="flashcards">
+    <h2>Curiosidades sobre Educação Rural 📚</h2>
+    <div class="flashcards">
+      <div class="flashcard">
+        <div class="front" style="background: url('2.jpeg') center/cover;"></div>
+        <div class="back">Mais de 30% das escolas rurais já usam tecnologias digitais!</div>
+      </div>
+      <div class="flashcard">
+        <div class="front" style="background: url('5.jpeg') center/cover;"></div>
+        <div class="back">Programas de inclusão social impactam milhares de famílias rurais.</div>
+      </div>
+      <div class="flashcard">
+        <div class="front" style="background: url('1.jpeg') center/cover;"></div>
+        <div class="back">Educação agrária fortalece o vínculo entre jovens e o território.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="descubra" style="background: url('https://via.placeholder.com/1200x300.png?text=Educação+Transforma') no-repeat center/cover; padding: 80px 10%; text-align: center; color: white;">
+    <h2 style="font-size: 2em; margin-bottom: 20px;">Descubra como a educação pode mudar o campo!</h2>
+    <a href="#" class="btn">↑ Voltar ao topo</a>
+  </section>
+
+  <div id="leaves-container"></div>
+
+  <footer>
+    <p>©2025 by Kauani *clique na plantinha no canto superior da tela</p>
+
+</footer> <script> function startLeafRain() { const container = document.getElementById("leaves-container"); for (let i = 0; i < 30; i++) { const leaf = document.createElement("div"); leaf.textContent = "🍃"; leaf.style.position = "fixed"; leaf.style.top = "-50px"; leaf.style.left = Math.random() * 100 + "vw"; leaf.style.fontSize = "1.5rem"; leaf.style.animation = "fall 3s ease-in-out forwards"; leaf.style.animationDelay = Math.random() * 2 + "s"; container.appendChild(leaf); setTimeout(() => container.removeChild(leaf), 5000); } } </script> </body> </html> 
